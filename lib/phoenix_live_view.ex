@@ -318,6 +318,11 @@ defmodule Phoenix.LiveView do
   successful result. You also want to catch any errors or exits and translate it
   to a meaningful update in the UI rather than crashing the user experience.
 
+  *Note*: Using `Phoenix.Component.async_result/1` or lower level `%AsyncResult{}` 
+  state to show loading placeholder content will present that loading content on
+  the first load HTML static render in the liveview lifecyle, which may 
+  have impacts to SEO indexing. 
+
   ### Async assigns
 
   The `assign_async/3` function takes a name, a list of keys which will be assigned
